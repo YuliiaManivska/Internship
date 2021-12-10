@@ -4,14 +4,14 @@ class Contact
   attr_accessor :name, :phone, :address
 
   def initialize(name, phone, address)
-    @name = name
-    @phone = phone
-    @address = address
-    regex_phone = /(?:\+38)?[ .-]?[0-9]{3}[ .-]?[0-9]{2}[ .-]?[0-9]{2}|044[ .-]?[0-9]{3}/
+    if phone =~/(?:\+38)\d[0-9]/
+        @name = name
+        @phone = phone
+        @address = address
+    else
+      puts "Phone number isn't correct"
+    end
   end
-  def valid_phone?(valid_phone)
-    valid_phone =~ (regex_phone) ? "Corect phone number" : "Phone number isn't correct"
-end
 end
 
 class Contacts
@@ -68,10 +68,10 @@ class Contacts
   end
 end 
 
-new_contact1 = Contact.new("Yuliia", 380975167852, "Kyiv, Kahovska, 62")
-new_contact2 = Contact.new("Olha", 380967653415, "Kyiv, Bratislavska, 14")
-new_contact3 =  Contact.new("Vlad", 380987654367, "Chernihiv, Nabereshna, 23")
-new_contact4 =  Contact.new("Test", 380989754367, "Nabereshna, 23")
+new_contact1 = Contact.new("Yuliia", '+380975167852', "Kyiv, Kahovska, 62")
+new_contact2 = Contact.new("Olha", '+380967653415', "Kyiv, Bratislavska, 14")
+new_contact3 =  Contact.new("Vlad", '+380987654367', "Chernihiv, Nabereshna, 23")
+new_contact4 =  Contact.new("Test", '380989754367', "Nabereshna, 23")
 
 contacts = Contacts.new
 first_id = contacts.add(new_contact1)
