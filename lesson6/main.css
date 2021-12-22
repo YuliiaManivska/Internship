@@ -1,0 +1,43 @@
+html{
+  font-family: 'Mulish', sans-serif;
+}
+body{
+  padding: 60px;
+}
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    text-decoration: none;
+    padding: 5px 15px;
+  }
+  li {
+    display:inline-block;
+  }
+  .button{
+    background-color:  #3C64B1;
+    padding: 5px 25px;
+    color: white;
+    justify-content: space-between;
+    transition: 0.5s;
+  }
+  .button:hover {
+    background:purple;    
+  }
+  .part_one{
+    display: flex;
+    text-align: center;
+  }
+  .three_opt{
+    text-align: center;
+    display: grid;
+  }
+  .other_opt{
+    text-align: center;
+    display: grid;
+  }
+
+
+
