@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :physicians
+  resources :diagnosis_items
+  resources :appointments
 end
