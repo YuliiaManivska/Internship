@@ -1,0 +1,84 @@
+html{
+font-family: 'DM Sans', sans-serif;
+margin: 10px;
+padding: 10px;
+}
+a{
+  text-decoration: none;
+}
+.title{
+  font-size: 40px;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+}
+.button1{
+  border-radius: 4px;
+  color: white;
+
+}
+.button2{
+  background-color:  #3C64B1;
+  padding: 5px 25px;
+  border-radius: 4px;
+  color: white;
+  
+}
+.buttons{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.time{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.mark{
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+.language{
+  width: auto;
+  display: flex;
+}
+.rate{
+  display: flex;
+}
+.two_opt{
+  width: 300px;
+  display: inline-block;
+  justify-content: space-between;
+}
+.info{
+  display: flex;
+  justify-content: space-around;  
+}
+.anketa{
+  display: block;
+}
+.personal_info{
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  width: 90%; 
+  height: 200px; 
+  resize: none;
+  text-align: center;
+  /* align-items: center; */
+}
+::placeholder {
+ padding: 80px 10px;
+}
+input{
+  outline: none;
+}
+input:focus:invalid{
+  border: 2px solid red;
+}
+input:focus:valid{
+  border: 2px solid green;
+}
