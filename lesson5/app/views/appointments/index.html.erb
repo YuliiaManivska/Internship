@@ -1,0 +1,30 @@
+<div class = "row justify-content-center m-3">
+  <div class = "col-8">
+    <div class = "card">
+      <div class = "card-body">
+        <h3>Appointments</h3>
+        <table class = "table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Physician_id</th>
+              <th>Patient_id</th>
+              <th>Appointment_date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @appointment.each do |appointment| %>
+            <tr>
+              <td><%= link_to appointment.id, appointment %></td>
+              <td><%= appointment.physician_id %></td>
+              <td><%= appointment.patient_id %></td>
+              <td><%= appointment.appointment_date %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Add appointment", new_appointment_path %></span>
+      </div>
+    </div>
+  </div>
+</div>
