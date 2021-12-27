@@ -1,0 +1,30 @@
+<div class ="row justify-content-center">
+  <div class = "col-8">
+    <div class = "card">
+      <div class = "card-header">
+        <div class = "row m-4">
+          <h2>Create new appointment</h2>
+          <%= form_for :appointment, url: appointments_path do |f| %>
+            <p>
+              Physician:
+              <%= f.number_field :physician_id %>
+            </p>
+            <p>
+              Patient:
+              <%= f.number_field :patient_id %>
+            </p>
+            <p>
+              Appointment date:
+              <%= f.datetime_field :appointment_date %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

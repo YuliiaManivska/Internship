@@ -7,17 +7,17 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Physician_id</th>
-              <th>Patient_id</th>
-              <th>Appointment_date</th>
+              <th>Physician</th>
+              <th>Patient</th>
+              <th>Appointment date</th>
             </tr>
           </thead>
           <tbody>
           <% @appointment.each do |appointment| %>
             <tr>
               <td><%= link_to appointment.id, appointment %></td>
-              <td><%= appointment.physician_id %></td>
-              <td><%= appointment.patient_id %></td>
+              <td><%= appointment.physician.first_name %></td>
+              <td><%= appointment.patient.first_name %></td>
               <td><%= appointment.appointment_date %></td>
             </tr>
           <% end %>
