@@ -11,11 +11,11 @@
             </p>
             <p>
               Physician:
-              <%= f.number_field :physician_id %>
+              <%= f.collection_select :physician_id, Physician.all, :id, :first_name%>
             </p>
             <p>
               Patient:
-              <%= f.number_field :patient_id %>
+              <%= f.collection_select :patient_id, Patient.all, :id, :first_name%>
             </p>
             <p>
               <%= f.submit %>
