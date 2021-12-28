@@ -1,0 +1,21 @@
+<div class = "row m-4">
+  <h2>Edit diagnosis item</h2>
+  <%= form_for :diagnosis_item, url: diagnosis_item_path(@diagnosis_item), method: :patch do |f| %>
+    <p>
+      Content:
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      Physician:
+      <%= f.number_field :physician_id %>
+    </p>
+    <p>
+      Appointment date:
+      <%= f.number_field :patient_id %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<div>
+

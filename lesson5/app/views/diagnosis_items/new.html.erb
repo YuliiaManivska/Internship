@@ -1,0 +1,30 @@
+<div class ="row justify-content-center">
+  <div class = "col-8">
+    <div class = "card">
+      <div class = "card-header">
+        <div class = "row m-4">
+          <h2>Create new diagnosis item</h2>
+          <%= form_for :diagnosis_item, url: diagnosis_items_path do |f| %>
+            <p>
+              Content:
+              <%= f.text_area :content %>
+            </p>
+            <p>
+              Physician:
+              <%= f.number_field :physician_id %>
+            </p>
+            <p>
+              Patient:
+              <%= f.number_field :patient_id %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
