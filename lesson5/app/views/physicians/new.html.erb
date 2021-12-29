@@ -4,26 +4,12 @@
       <div class="card-header">
         <div class="row m-4">
           <h2>Create new physician</h2>
-          <%= form_for @physician do |f| %>
-            <p>
-              First Name
-              <%= f.text_field :first_name %>
-            </p>
-            <p>
-              Last Name
-              <%= f.text_field :last_name %>
-            </p>
-            <p>
-              Phone number
-              <%= f.text_field :phone_number %>
-            </p>
-            <p>
-              Level
-              <%= f.select :level, options_for_select(Physician::LEVEL) %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
+          <%= simple_form_for @physician do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :phone_number %>
+          <%= f.input :level %>
+          <%= f.button :submit %>
           <% end %>
         </div>
       </div>

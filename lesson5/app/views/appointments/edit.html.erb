@@ -1,21 +1,10 @@
 <div class="row m-4">
   <h2>Edit appointment</h2>
-  <%= form_for @appointment do |f| %>
-    <p>
-      Physician:
-      <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
-    </p>
-    <p>
-      Patient:
-      <%= f.collection_select :patient_id, @patients, :id, :first_name %>
-    </p>
-    <p>
-      Appointment date:
-      <%= f.datetime_field :appointment_date %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
+  <%= simple_form_for @appointment do |f| %>
+  <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
+  <%= f.collection_select :patient_id, @patients, :id, :first_name %>
+  <%= f.input :appointment_date %>
+  <%= f.button :submit %>
   <% end %>
 <div>
 

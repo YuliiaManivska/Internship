@@ -4,22 +4,11 @@
       <div class="card-header">
         <div class="row m-4">
           <h2>Create new diagnosis item</h2>
-          <%= form_for @diagnosis_item do |f| %>
-            <p>
-              Content:
-              <%= f.text_area :content %>
-            </p>
-            <p>
-              Physician:
-              <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
-            </p>
-            <p>
-              Patient:
-              <%= f.collection_select :patient_id, @patients, :id, :first_name %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
+          <%= simple_form_for @diagnosis_item do |f| %>
+          <%= f.input :content %>
+          <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
+          <%= f.collection_select :patient_id, @patients, :id, :first_name %>
+          <%= f.button :submit %>
           <% end %>
         </div>
       </div>

@@ -4,26 +4,12 @@
       <div class="card-header">
         <div class="row m-4">
           <h2>Create new patient</h2>
-          <%= form_for @patient do |f| %>
-            <p>
-              First Name
-              <%= f.text_field :first_name %>
-            </p>
-            <p>
-              Last Name
-              <%= f.text_field :last_name %>
-            </p>
-            <p>
-              Email
-              <%= f.text_field :email %>
-            </p>
-            <p>
-              Age
-              <%= f.number_field :age %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
+          <%= simple_form_for @patient do |f| %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :email %>
+          <%= f.input :age %>
+          <%= f.button :submit %>
           <% end %>
         </div>
       </div>
