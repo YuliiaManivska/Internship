@@ -1,6 +1,6 @@
 class PhysiciansController < ApplicationController
   def index
-    @physician = Physician.all
+    @physicians = Physician.all
   end
 
   def show
@@ -14,7 +14,7 @@ class PhysiciansController < ApplicationController
   def create
     @physician = Physician.new(physician_params)
     if @physician.save
-      redirect_to @physician
+      redirect_to physician_path(@physician)
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class PhysiciansController < ApplicationController
   def update
     @physician = Physician.find(params[:id])
     if @physician.update(physician_params)
-      redirect_to @physician
+      redirect_to physician_path(@physician)
     else
       render 'edit'
     end
@@ -39,7 +39,9 @@ class PhysiciansController < ApplicationController
     redirect_to physicians_path
   end
 
-  private def physician_params
+  private
+  
+  def physician_params
     params.require(:physician).permit(:first_name, :last_name, :phone_number, :level)
   end
 end
