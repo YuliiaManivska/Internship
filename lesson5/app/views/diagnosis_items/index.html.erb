@@ -1,9 +1,9 @@
-<div class = "row justify-content-center m-3">
-  <div class = "col-8">
-    <div class = "card">
-      <div class = "card-body">
+<div class="row justify-content-center m-3">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-body">
         <h3>Diagnosis items</h3>
-        <table class = "table">
+        <table class="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -13,7 +13,7 @@
             </tr>
           </thead>
           <tbody>
-          <% @diagnosis_item.each do |diagnosis_item| %>
+          <% @diagnosis_items.each do |diagnosis_item| %>
             <tr>
               <td><%= link_to diagnosis_item.id, diagnosis_item %></td>
               <td><%= diagnosis_item.content %></td>

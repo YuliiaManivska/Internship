@@ -1,26 +1,25 @@
-<div class ="row justify-content-center">
-  <div class = "col-5">
-    <div class = "card">
-      <div class = "card-header">
+<div class="row justify-content-center">
+  <div class="col-5">
+    <div class="card">
+      <div class="card-header">
       physician № <%= @physician.id %>
       </div>
-      <div class = "card-body">
+      <div class="card-body">
         <p>
-        <%= @physician.first_name%>
+        <%= @physician.first_name %>
         </p>
         <p>
-        <%= @physician.last_name%>
+        <%= @physician.last_name %>
         </p>
         <p>
-        <%= @physician.phone_number%>
+        <%= @physician.phone_number %>
         </p>
         <p>
-        <%= @physician.level%>
+        <%= @physician.level %>
         </p>
         <hr>
-        <%= link_to "Edit", edit_physician_path(@physician), :class => "btn btn-warning" %>
-        <%= link_to "Delete", physician_path(@physician), method: :delete, data:{confirm: "Do you want delete this post"}, :class => "btn btn-danger" %>
-        
+        <%= link_to "Edit", edit_physician_path(@physician), class: "btn btn-warning" %>
+        <%= link_to "Delete", physician_path(@physician), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
       </div>
     </div>
   </div>

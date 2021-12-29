@@ -1,26 +1,25 @@
-<div class ="row justify-content-center">
-  <div class = "col-5">
-    <div class = "card">
-      <div class = "card-header">
+<div class="row justify-content-center">
+  <div class="col-5">
+    <div class="card">
+      <div class="card-header">
       Appointment № <%= @appointment.id %>
       </div>
       <div class = "card-body">
         <p>
         Physician: 
-        <%= @appointment.physician.first_name%>
+        <%= @appointment.physician.first_name %>
         </p>
         <p>
         Patient: 
-        <%= @appointment.patient.first_name%>
+        <%= @appointment.patient.first_name %>
         </p>
         <p>
         Appointment date: 
-        <%= @appointment.appointment_date%>
+        <%= @appointment.appointment_date %>
         </p>
         <hr>
-        <%= link_to "Edit", edit_appointment_path(@appointment), :class => "btn btn-warning" %>
-        <%= link_to "Delete", appointment_path(@appointment), method: :delete, data:{confirm: "Do you want delete this post"}, :class => "btn btn-danger" %>
-        
+        <%= link_to "Edit", edit_appointment_path(@appointment), class: "btn btn-warning" %>
+        <%= link_to "Delete", appointment_path(@appointment), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
       </div>
     </div>
   </div>

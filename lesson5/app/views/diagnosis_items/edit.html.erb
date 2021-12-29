@@ -1,17 +1,17 @@
-<div class = "row m-4">
+<div class="row m-4">
   <h2>Edit diagnosis item</h2>
-  <%= form_for :diagnosis_item, url: diagnosis_item_path(@diagnosis_item), method: :patch do |f| %>
+  <%= form_for @diagnosis_item do |f| %>
     <p>
       Content:
       <%= f.text_area :content %>
     </p>
     <p>
       Physician:
-      <%= f.collection_select :physician_id, Physician.all, :id, :first_name%>
+      <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
     </p>
     <p>
       Appointment date:
-      <%= f.collection_select :patient_id, Patient.all, :id, :first_name%>
+      <%= f.collection_select :patient_id, @patients, :id, :first_name %>
     </p>
     <p>
       <%= f.submit %>

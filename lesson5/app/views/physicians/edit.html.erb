@@ -1,6 +1,6 @@
-<div class = "row m-4">
+<div class="row m-4">
   <h2>Edit physician</h2>
-  <%= form_for :physician, url: physician_path(@physician), method: :patch do |f| %>
+  <%= form_for @physician do |f| %>
     <p>
       First Name
       <%= f.text_field :first_name %>
@@ -10,12 +10,12 @@
       <%= f.text_field :last_name %>
     </p>
     <p>
-      Email
+      Phone
       <%= f.text_field :phone_number %>
     </p>
     <p>
-      Age
-      <%= f.number_field :level %>
+      Level
+      <%= f.select :level, options_for_select(Physician::LEVEL, @physician.level) %>
     </p>
     <p>
       <%= f.submit %>

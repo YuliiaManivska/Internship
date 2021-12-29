@@ -1,17 +1,17 @@
-<div class ="row justify-content-center">
-  <div class = "col-8">
-    <div class = "card">
-      <div class = "card-header">
-        <div class = "row m-4">
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header">
+        <div class="row m-4">
           <h2>Create new appointment</h2>
-          <%= form_for :appointment, url: appointments_path do |f| %>
+          <%= form_for @appointment do |f| %>
             <p>
               Physician:
-              <%= f.collection_select :physician_id, Physician.all, :id, :first_name%>
+              <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
             </p>
             <p>
               Patient:
-              <%= f.collection_select :patient_id, Patient.all, :id, :first_name%>
+              <%= f.collection_select :patient_id, @patients, :id, :first_name %>
             </p>
             <p>
               Appointment date:

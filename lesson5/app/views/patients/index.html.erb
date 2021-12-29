@@ -1,9 +1,9 @@
-<div class = "row justify-content-center m-3">
-  <div class = "col-8">
-    <div class = "card">
-      <div class = "card-body">
+<div class="row justify-content-center m-3">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-body">
         <h3>Patients</h3>
-        <table class = "table">
+        <table class="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -14,7 +14,7 @@
             </tr>
           </thead>
           <tbody>
-          <% @patient.each do |patient| %>
+          <% @patients.each do |patient| %>
             <tr>
               <td><%= link_to patient.id, patient %></td>
               <td><%= patient.first_name %></td>
