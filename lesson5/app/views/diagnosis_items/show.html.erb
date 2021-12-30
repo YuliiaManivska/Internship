@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+  <div class="col-5">
+    <div class="card">
+      <div class="card-header">
+      Diagnosis item № <%= @diagnosis_item.id %>
+      </div>
+      <div class="card-body">
+        <p>
+        Diagnosis item: 
+        <%= @diagnosis_item.content %>
+        </p>
+        <p>
+        Physician: 
+        <%= @diagnosis_item.physician.first_name %>
+        </p>
+        <p>
+        Patient: 
+        <%= @diagnosis_item.patient.first_name %>
+        </p>
+        <hr>
+        <%= link_to "Edit", edit_diagnosis_item_path(@diagnosis_item), class: "btn btn-warning" %>
+        <%= link_to "Delete", diagnosis_item_path(@diagnosis_item), method: :delete, data:{confirm: "Do you want delete this diagnosis item"}, class: "btn btn-danger" %>
+        
+      </div>
+    </div>
+  </div>
+</div>

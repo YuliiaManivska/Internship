@@ -1,4 +1,5 @@
 class Physician < ApplicationRecord
+  LEVEL = ["junior", "middle", "senior"]
   validates :first_name, :phone_number, :level, presence: true
   validates :level, inclusion: { in: %w(junior middle senior),
     message: "%{value} is not a valid level" }

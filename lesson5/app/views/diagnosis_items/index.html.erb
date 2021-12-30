@@ -1,0 +1,31 @@
+<div class="row justify-content-center m-3">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-body">
+        <h3>Diagnosis items</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Content</th>
+              <th>Physician</th>
+              <th>Patient<th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @diagnosis_items.each do |diagnosis_item| %>
+            <tr>
+              <td><%= link_to diagnosis_item.id, diagnosis_item %></td>
+              <td><%= diagnosis_item.content %></td>
+              <td><%= diagnosis_item.physician.first_name %></td>
+              <td><%= diagnosis_item.patient.first_name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Add diagnosis item", new_diagnosis_item_path %></span>
+      </div>
+    </div>
+  </div>
+</div>
+
