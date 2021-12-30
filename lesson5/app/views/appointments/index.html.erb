@@ -15,7 +15,7 @@
           <tbody>
           <% @appointments.each do |appointment| %>
             <tr>
-              <td><%= link_to appointment.id, appointment %></td>
+              <td><%= link_to appointment.id, appointment, class: "text-decoration-none text-info"%></td>
               <td><%= appointment.physician.first_name %></td>
               <td><%= appointment.patient.first_name %></td>
               <td><%= appointment.appointment_date %></td>
@@ -23,7 +23,7 @@
           <% end %>
           </tbody>
         </table>
-        <span class="me-3 py-2 text-dark text-decoration-none background-blue"><%=link_to "Add appointment", new_appointment_path %></span>
+        <%= link_to "Add appointment", new_appointment_path, class: "btn btn-info" %>
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@
           <tbody>
           <% @physicians.each do |physician| %>
             <tr>
-              <td><%= link_to physician.id, physician %></td>
+              <td><%= link_to physician.id, physician, class: "text-decoration-none text-info" %></td>
               <td><%= physician.first_name %></td>
               <td><%= physician.last_name %></td>
               <td><%= physician.phone_number %></td>
@@ -25,7 +25,7 @@
           <% end %>
           </tbody>
         </table>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Add Physician", new_physician_path %></span>
+        <%= link_to "Add Physician", new_physician_path, class: "btn btn-info" %>
       </div>
     </div>
   </div>
