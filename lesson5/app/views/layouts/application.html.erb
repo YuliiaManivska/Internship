@@ -21,10 +21,13 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-2 ms-md-auto m-2">
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Patients", patients_path %></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Physicians", physicians_path %></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Appointments", appointments_path %></span>
-        <span class="py-2 text-dark text-decoration-none"><%=link_to "Diagnosis items", diagnosis_items_path %></span>
+        <span><%=link_to "Patients", patients_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%=link_to "Physicians", physicians_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%=link_to "Appointments", appointments_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%=link_to "Diagnosis items", diagnosis_items_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
       </nav>
     </div>
     </header>
