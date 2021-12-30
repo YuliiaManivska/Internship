@@ -1,9 +1,4 @@
 <div class="row m-4">
   <h2>Edit diagnosis item</h2>
-  <%= simple_form_for @diagnosis_item do |f| %>
-  <%= f.input :content %>
-  <%= f.collection_select :physician_id, @physicians, :id, :first_name %>
-  <%= f.collection_select :patient_id, @patients, :id, :first_name %>
-  <%= f.button :submit %>
-  <% end %>
+  <%= render "form" %>
 <div>

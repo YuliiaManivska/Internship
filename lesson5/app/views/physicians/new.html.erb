@@ -4,13 +4,7 @@
       <div class="card-header">
         <div class="row m-4">
           <h2>Create new physician</h2>
-          <%= simple_form_for @physician do |f| %>
-          <%= f.input :first_name %>
-          <%= f.input :last_name %>
-          <%= f.input :phone_number %>
-          <%= f.input :level %>
-          <%= f.button :submit %>
-          <% end %>
+          <%= render "form" %>
         </div>
       </div>
     </div>

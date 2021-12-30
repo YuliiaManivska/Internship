@@ -1,12 +1,6 @@
 <div class="row m-4">
   <h2>Edit patient</h2>
-  <%= simple_form_for @patient do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :age %>
-  <%= f.button :submit %>
-  <% end %>
+  <%= render "form" %>
 <div>
 
 
