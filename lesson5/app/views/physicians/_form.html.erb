@@ -2,7 +2,6 @@
 <%= f.input :first_name %>
 <%= f.input :last_name %>
 <%= f.input :phone_number %>
-<%= f.input :level, collection: Physician::LEVEL %>
-<%= f.button :submit %><br>
+<%= f.input :level, collection: Physician::LEVEL %><br>
 <%= f.button :submit, class: "btn btn-info" %>
 <% end %>
