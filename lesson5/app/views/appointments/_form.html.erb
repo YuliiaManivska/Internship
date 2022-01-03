@@ -1,6 +1,6 @@
 <%= simple_form_for @appointment do |f| %>
-<%= f.collection_select :physician_id, @physicians, :id, :first_name %>
-<%= f.collection_select :patient_id, @patients, :id, :first_name %>
-<%= f.input :appointment_date %>
-<%= f.button :submit %>
+<%= f.association :patient, collection: @patients, label_method: :first_name, value_method: :id, label: "Patient", include_blank: false %>
+<%= f.association :physician, collection: @physicians, label_method: :first_name, value_method: :id, label: "Physician", include_blank: false %>
+<%= f.input :appointment_date %><br>
+<%= f.button :submit, class: "btn btn-info" %>
 <% end %>
