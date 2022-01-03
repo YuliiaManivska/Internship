@@ -21,16 +21,24 @@
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-2 ms-md-auto m-2">
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Patients", patients_path %></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Physicians", physicians_path %></span>
-        <span class="me-3 py-2 text-dark text-decoration-none"><%=link_to "Appointments", appointments_path %></span>
-        <span class="py-2 text-dark text-decoration-none"><%=link_to "Diagnosis items", diagnosis_items_path %></span>
+        <span><%= link_to "Patients", patients_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%= link_to "Physicians", physicians_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%= link_to "Appointments", appointments_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <span><%= link_to "Diagnosis items", diagnosis_items_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <% if user_signed_in? %>
+          <span><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "text-dark text-decoration-none me-3 py-2" %></span>
+          <span><%= link_to "Edit Profile", edit_user_registration_path, class: "text-dark text-decoration-none me-3 py-2" %></span>
+        <% else %>
+          <span><%= link_to "Sign Up", new_user_registration_path, class: "text-primary me-3 py-2" %></span>
+          <span><%= link_to "Log In", new_user_session_path, class: "text-primary me-3 py-2" %></span>
+        <% end %>
       </nav>
     </div>
     </header>
-    <div class = "container">
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-
   </body>
 </html>
