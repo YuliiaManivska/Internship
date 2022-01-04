@@ -18,8 +18,13 @@
         <%= @physician.level %>
         </p>
         <hr>
-        <%= link_to "Edit", edit_physician_path(@physician), class: "btn btn-warning" %>
-        <%= link_to "Delete", physician_path(@physician), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
+        <% if can? :update, @physician%>
+          <%= link_to "Edit", edit_physician_path(@physician), class: "btn btn-warning" %>
+        <% end %>
+
+        <% if can? :destroy, @physician%>
+          <%= link_to "Delete", physician_path(@physician), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
+        <% end %>
       </div>
     </div>
   </div>
