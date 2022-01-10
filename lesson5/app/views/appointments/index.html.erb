@@ -23,7 +23,7 @@
           <% end %>
           </tbody>
         </table>
-        <% if can? :create, @appointments %>
+        <% if can? :create, Appointment %>
           <%= link_to "Add appointment", new_appointment_path, class: "btn btn-info" %>
         <% end %>
       </div>

@@ -25,7 +25,7 @@
           <% end %>
           </tbody>
         </table>
-        <% if can? :create, @patient%>
+        <% if can? :create, Patient %>
           <%= link_to "Add Patient", new_patient_path, class: "btn btn-info" %>
         <% end %>
       </div>
