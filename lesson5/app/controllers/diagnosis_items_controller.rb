@@ -1,6 +1,6 @@
 class DiagnosisItemsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @diagnosis_items = DiagnosisItem.all
   end
@@ -35,7 +35,7 @@ class DiagnosisItemsController < ApplicationController
     if @diagnosis_item.update(diagnosis_item_params)
       redirect_to diagnosis_item_path(@diagnosis_item)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -46,7 +46,7 @@ class DiagnosisItemsController < ApplicationController
   end
 
   private
-  
+
   def diagnosis_item_params
     params.require(:diagnosis_item).permit(:content, :physician_id, :patient_id)
   end

@@ -1,6 +1,6 @@
 class PhysiciansController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @physicians = Physician.all
   end
@@ -18,7 +18,7 @@ class PhysiciansController < ApplicationController
     if @physician.save
       redirect_to physician_path(@physician)
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -31,7 +31,7 @@ class PhysiciansController < ApplicationController
     if @physician.update(physician_params)
       redirect_to physician_path(@physician)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -42,7 +42,7 @@ class PhysiciansController < ApplicationController
   end
 
   private
-  
+
   def physician_params
     params.require(:physician).permit(:first_name, :last_name, :phone_number, :level)
   end

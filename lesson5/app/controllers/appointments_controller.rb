@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @appointments = Appointment.all
   end
@@ -20,7 +20,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       redirect_to appointment_path(@appointment)
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -45,8 +45,8 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_path
   end
 
-  private 
-  
+  private
+
   def appointment_params
     params.require(:appointment).permit(:physician_id, :patient_id, :appointment_date)
   end
