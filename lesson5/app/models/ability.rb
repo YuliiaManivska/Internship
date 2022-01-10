@@ -8,12 +8,10 @@ class Ability
       can :read, Patient
       can :read, Physician
     elsif user.admin_role?
-      can :read, all
-      can :manage, Appointment
+      can :read, :all
+      can :create, Appointment
     else
-      can :read, all
-      can :manage, DiagnosisItem
-      can :manage, Appointment
+      can :manage, :all
    end 
   end
 end
