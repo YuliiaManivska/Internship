@@ -1,4 +1,6 @@
 class DiagnosisItemsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @diagnosis_items = DiagnosisItem.all
   end

@@ -1,4 +1,6 @@
 class PhysiciansController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @physicians = Physician.all
   end
