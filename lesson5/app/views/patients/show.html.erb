@@ -18,9 +18,13 @@
         <%= @patient.age %>
         </p>
         <hr>
-        <%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-warning" %>
-        <%= link_to "Delete", patient_path(@patient), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
-        
+        <% if can? :update, @patient%>
+          <%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-warning" %>
+        <% end %>
+
+        <% if can? :destroy, @patient%>
+          <%= link_to "Delete", patient_path(@patient), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
+        <% end %>
       </div>
     </div>
   </div>

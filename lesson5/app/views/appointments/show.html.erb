@@ -18,8 +18,14 @@
         <%= @appointment.appointment_date %>
         </p>
         <hr>
-        <%= link_to "Edit", edit_appointment_path(@appointment), class: "btn btn-warning" %>
-        <%= link_to "Delete", appointment_path(@appointment), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
+        <% if can? :update, @appointment%>
+          <%= link_to "Edit", edit_appointment_path(@appointment), class: "btn btn-warning" %>
+        <% end %>
+
+        <% if can? :destroy, @appointment%>
+          <%= link_to "Delete", appointment_path(@appointment), method: :delete, data:{confirm: "Do you want delete this post"}, class: "btn btn-danger" %>
+        <% end %>
+        
       </div>
     </div>
   </div>

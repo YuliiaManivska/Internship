@@ -23,7 +23,9 @@
           <% end %>
           </tbody>
         </table>
-        <%= link_to "Add diagnosis item", new_diagnosis_item_path, class: "btn btn-info" %>
+        <% if can? :create, DiagnosisItem %>
+          <%= link_to "Add diagnosis item", new_diagnosis_item_path, class: "btn btn-info" %>
+        <% end %>
       </div>
     </div>
   </div>
