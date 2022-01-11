@@ -12,6 +12,6 @@ class Ability
       can :create, Appointment
     else
       can :manage, :all
-   end 
+    end
   end
 end
