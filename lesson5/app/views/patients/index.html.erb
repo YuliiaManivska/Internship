@@ -21,6 +21,19 @@
               <td><%= patient.last_name %></td>
               <td><%= patient.email %></td>
               <td><%= patient.age %></td>
+              <td>
+                <% if can? :read, DiagnosisItem %>
+                    <p>
+                      <button class="btn btn-secondary show" id="<%= patient.id %>" type="button" data-bs-toggle="collapse" data-bs-target="#id<%= patient.id %>" aria-expanded="false" aria-controls="id<%= patient.id %>">
+                        Show diagnosis items
+                      </button>
+                    </p>
+                    <div class="collapse load" id="id<%= patient.id %>">
+                      <div class="card card-body", id="show-items">
+                      </div>
+                    </div>
+                <% end %>
+              </td>
             </tr>
           <% end %>
           </tbody>
