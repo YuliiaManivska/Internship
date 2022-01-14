@@ -5,13 +5,13 @@ $(".show").click(function(){
     dataType: "json",
 
     success: function (data, textStatus) {
-      let res = JSON.stringify(data)
+      let res = data.map((item) => item.content)
       $(".load").text(res);
       console.log(data)
     }
   })
 });
 }
-$(document).ready(function() {
-  load()
-});
+$(document).on('turbolinks:load', function() {
+  load();
+})
