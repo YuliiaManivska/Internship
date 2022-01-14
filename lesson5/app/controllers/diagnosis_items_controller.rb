@@ -1,6 +1,17 @@
 class DiagnosisItemsController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    respond_to do |format|
+      format.json  do
+        # @diagnosis_items = DiagnosisItem.where(patient_id: params[:patient_id])
+        @diagnosis_items = DiagnosisItem.select( :content).where(patient_id: params[:patient_id])
+        render json: @diagnosis_items 
+      end
+      format.html
+    end
+  end
+
   def new
     @patients = Patient.all
     @physicians = Physician.all
@@ -10,7 +21,7 @@ class DiagnosisItemsController < ApplicationController
     if @diagnosis_item.save
       redirect_to diagnosis_items_path(@diagnosis_item)
     else
-      render :new
+      render "new"
     end
   end
 
