@@ -1,17 +1,18 @@
-function load(){
+function setupDiagnosisItems(){
 $(".show").click(function(){
   $.ajax({
     url: `/diagnosis_items.json?patient_id=${$(this).attr('id')}`,
     dataType: "json",
 
     success: function (data, textStatus) {
-      let res = data.map((item) => item.content)
-      $(".load").text(res);
-      console.log(data)
+      const res = data.map((item) => item.content);
+      let patientId = data.map((item) => item.patient_id) ;
+      $(`#show-items${patientId}`).text(res);
+      console.log(patientId);
     }
   })
 });
 }
 $(document).on('turbolinks:load', function() {
-  load();
+  setupDiagnosisItems();
 })
