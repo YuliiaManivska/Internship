@@ -8,7 +8,6 @@ $(".show").click(function(){
       const res = data.map((item) => item.content);
       let patientId = data.map((item) => item.patient_id) ;
       $(`#show-items${patientId}`).text(res);
-      console.log(patientId);
     }
   })
 });
