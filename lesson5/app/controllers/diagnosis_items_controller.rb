@@ -20,7 +20,7 @@ class DiagnosisItemsController < ApplicationController
     if @diagnosis_item.save
       redirect_to diagnosis_item_path(@diagnosis_item)
     else
-      render "new"
+      render :new
     end
   end
 
