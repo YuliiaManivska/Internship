@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
-      render "new"
+      render :new
     end
   end
 
@@ -23,7 +23,7 @@ class AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       redirect_to appointment_path(@appointment)
     else
-      render "edit"
+      render :edit
     end
   end
 

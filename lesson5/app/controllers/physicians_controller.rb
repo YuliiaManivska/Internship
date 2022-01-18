@@ -5,7 +5,7 @@ class PhysiciansController < ApplicationController
     if @physician.save
       redirect_to physician_path(@physician)
     else
-      render "new"
+      render :new
     end
   end
 
@@ -13,7 +13,7 @@ class PhysiciansController < ApplicationController
     if @physician.update(physician_params)
       redirect_to physician_path(@physician)
     else
-      render "edit"
+      render :edit
     end
   end
 
